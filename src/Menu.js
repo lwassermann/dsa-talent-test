@@ -6,6 +6,12 @@ import ListItemText from '@material-ui/core/ListItemText'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
+const PATHS = [
+  { label: 'Home', path: '/' },
+  { label: 'Talent challenge', path: '/talent' },
+  { label: 'About', path: '/about' }
+]
+
 class Menu extends Component {
   constructor() {
     super()
@@ -26,20 +32,20 @@ class Menu extends Component {
     const { open } = this.state
     return (
       <Fragment>
-        <IconButton onClick={this.toggle} color="inherit" aria-label="Open menu">
+        <IconButton
+          onClick={this.toggle}
+          color="inherit"
+          aria-label="Open menu"
+        >
           <MenuIcon />
         </IconButton>
         <Drawer open={open} onClose={this.toggle}>
           <List component="nav">
-            <ListItem component="a" href="/">
-              <ListItemText inset primary="Home" />
-            </ListItem>
-            <ListItem component="a" href="/talent">
-              <ListItemText inset primary="Talent" />
-            </ListItem>
-            <ListItem component="a" href="/about">
-              <ListItemText inset primary="About" />
-            </ListItem>
+            {PATHS.map(({ path, label }) => (
+              <ListItem key={path} component="a" href={path} button>
+                <ListItemText inset primary={label} />
+              </ListItem>
+            ))}
           </List>
         </Drawer>
       </Fragment>

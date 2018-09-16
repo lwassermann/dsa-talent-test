@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './Home'
-import Talent from './Talent'
+import ChooseTalent from './ChooseTalent'
+import TalentChallenge from './TalentChallenge'
 
 import './init-globals'
 
@@ -12,7 +13,13 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/talent" component={Talent} />
+          <Route exact path="/talent" component={ChooseTalent} />
+          <Route exact path="/talent/:attr" component={ChooseTalent} />
+          <Route exact path="/talent/:attr/:attr2" component={ChooseTalent} />
+          <Route
+            path="/talent/:attr/:attr2/:attr3"
+            component={TalentChallenge}
+          />
         </Switch>
       </Router>
     )

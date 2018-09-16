@@ -2,41 +2,41 @@ export const attributes = [
   {
     name: 'bravery',
     label: 'Mut',
-    abbreviation: 'MU'
+    abbreviation: 'Mu'
   },
   {
     name: 'intelligence',
     label: 'Klugheit',
-    abbreviation: 'KL'
+    abbreviation: 'Kl'
   },
   {
     name: 'intuition',
     label: 'Intuition',
-    abbreviation: 'IN'
+    abbreviation: 'In'
   },
   {
     name: 'charisma',
     label: 'Charisma',
-    abbreviation: 'CH'
+    abbreviation: 'Ch'
   },
   {
     name: 'dexterity',
     label: 'Fingerfertigkeit',
-    abbreviation: 'FI'
+    abbreviation: 'Fi'
   },
   {
     name: 'agility',
     label: 'Gewandheit',
-    abbreviation: 'GE'
+    abbreviation: 'Ge'
   },
   {
     name: 'konstitution',
     label: 'Konstitution',
-    abbreviation: 'KO'
+    abbreviation: 'Ko'
   },
   {
     name: 'strength',
     label: 'Körperkraft',
-    abbreviation: 'KÖ'
+    abbreviation: 'Kö'
   }
 ]
