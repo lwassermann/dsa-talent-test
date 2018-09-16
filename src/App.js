@@ -1,30 +1,22 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './Home'
+import Talent from './Talent'
 
-global.character = {
-  attributes: {
-    bravery: 10,
-    intelligence: 10,
-    intuition: 10,
-    charisma: 10,
-    dexterity: 10,
-    agility: 10,
-    konstitution: 10,
-    strength: 10
-  }
-}
+import './init-globals'
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/talent" component={Talent} />
+        </Switch>
       </Router>
     )
     // <Route path="/about" component={About} />
-    // <Route path="/talent" component={Talent} />
   }
 }
 

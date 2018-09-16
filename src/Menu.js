@@ -31,6 +31,9 @@ class Menu extends Component {
         </IconButton>
         <Drawer open={open} onClose={this.toggle}>
           <List component="nav">
+            <ListItem component="a" href="/">
+              <ListItemText inset primary="Home" />
+            </ListItem>
             <ListItem component="a" href="/talent">
               <ListItemText inset primary="Talent" />
             </ListItem>
