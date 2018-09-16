@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
@@ -30,12 +30,12 @@ class Menu extends Component {
           <MenuIcon />
         </IconButton>
         <Drawer open={open} onClose={this.toggle}>
-          <List>
-            <ListItem>
-              <Link to="/talent">Talent</Link>
+          <List component="nav">
+            <ListItem component="a" href="/talent">
+              <ListItemText inset primary="Talent" />
             </ListItem>
-            <ListItem>
-              <Link to="/about">About</Link>
+            <ListItem component="a" href="/about">
+              <ListItemText inset primary="About" />
             </ListItem>
           </List>
         </Drawer>

@@ -5,14 +5,15 @@ import Typography from '@material-ui/core/Typography'
 
 import Menu from './Menu'
 
-export default function() {
+export default function({ title = 'Roll a test' }) {
   return (
     <AppBar position="static">
       <Toolbar>
         <Menu />
-        <Typography variant="title">Roll a test</Typography>
+        <Typography variant="title" color="inherit">
+          {title}
+        </Typography>
       </Toolbar>
     </AppBar>
   )
 }
-// <Link to="/talent">Talent</Link> <Link to="/about">About</Link>
