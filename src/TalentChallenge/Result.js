@@ -51,7 +51,7 @@ function Result({ attributes, result, classes }) {
   )
 
   return (
-    <Typography paragraph className={classes.root}>
+    <Typography paragraph component="div" className={classes.root}>
       <ul className={classes.attributes}>
         {values.map(([rolled, charVal], idx) => (
           <li key={idx} className={classes.attribute}>
