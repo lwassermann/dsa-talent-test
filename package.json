@@ -2,6 +2,7 @@
   "name": "dsa-talent-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lwassermann.github.io/dsa-talent-test",
   "dependencies": {
     "@material-ui/core": "^3.0.3",
     "@material-ui/icons": "^3.0.1",
