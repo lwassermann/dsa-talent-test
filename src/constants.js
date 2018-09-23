@@ -22,7 +22,7 @@ export const attributes = [
   {
     name: 'dexterity',
     label: 'Fingerfertigkeit',
-    abbreviation: 'Fi'
+    abbreviation: 'FF'
   },
   {
     name: 'agility',
@@ -37,6 +37,6 @@ export const attributes = [
   {
     name: 'strength',
     label: 'Körperkraft',
-    abbreviation: 'Kö'
+    abbreviation: 'KK'
   }
 ]
