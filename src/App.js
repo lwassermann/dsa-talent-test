@@ -11,7 +11,7 @@ import './init-globals'
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/dsa-talent-test">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/talent" component={ChooseTalent} />
