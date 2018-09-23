@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './Home'
 import ChooseTalent from './ChooseTalent'
 import TalentChallenge from './TalentChallenge'
+import AdjustAttributes from './Character/AdjustAttributes'
 
 import './init-globals'
 
@@ -20,6 +21,7 @@ class App extends Component {
             path="/talent/:attr/:attr2/:attr3"
             component={TalentChallenge}
           />
+          <Route path="/character/attributes" component={AdjustAttributes} />
         </Switch>
       </Router>
     )
