@@ -7,9 +7,9 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
 const PATHS = [
-  { label: 'Home', path: '/' },
-  { label: 'Talent challenge', path: '/talent' },
-  { label: 'Adjust attributes', path: '/character/attributes' }
+  { label: 'Home', path: '#/' },
+  { label: 'Talent challenge', path: '#/talent' },
+  { label: 'Adjust attributes', path: '#/character/attributes' }
 ]
 
 class Menu extends Component {

@@ -21,7 +21,7 @@ function Selected({ attributes }) {
 }
 
 export default function ChooseTalent({ match }) {
-  const prefix = `${match.url}/`
+  const prefix = `#${match.url}/`
 
   return (
     <Fragment>

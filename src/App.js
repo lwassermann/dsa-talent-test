@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './Home'
 import ChooseTalent from './ChooseTalent'
@@ -11,7 +11,7 @@ import './init-globals'
 class App extends Component {
   render() {
     return (
-      <Router basename="/dsa-talent-test">
+      <Router>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/talent" component={ChooseTalent} />
