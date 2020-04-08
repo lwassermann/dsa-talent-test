@@ -21,6 +21,22 @@ type alias Character =
     }
 
 
+newCharacter : Character
+newCharacter =
+    { name = "Gaston der Glückliche"
+    , attributes =
+        { bravery = 10
+        , intelligence = 10
+        , intuition = 10
+        , charisma = 10
+        , dexterity = 10
+        , agility = 10
+        , konstitution = 10
+        , strength = 10
+        }
+    }
+
+
 check : Character -> Attribute -> Int -> Int
 check character attribute diceRoll =
     max (diceRoll - Attributes.getProp attribute character.attributes) 0

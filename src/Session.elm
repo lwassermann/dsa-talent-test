@@ -1,7 +1,19 @@
 module Session exposing (..)
 
-import Character exposing (Character)
+import Character as Chr
 
 
 type Session
-    = Character
+    = Player Chr.Character
+
+
+newSession : Session
+newSession =
+    Player Chr.newCharacter
+
+
+getCharacter : Session -> Chr.Character
+getCharacter session =
+    case session of
+        Player chr ->
+            chr
