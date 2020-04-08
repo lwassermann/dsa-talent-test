@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://lwassermann.github.io/dsa-talent-test",
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
+    "start": "elm-live src/Main.elm --dir=./public --pushstate -- --output=public/main.js",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "elm-live": "^4.0.2",
     "gh-pages": "^2.1.1"
   },
   "browserslist": {
