@@ -74,9 +74,7 @@ view model =
     main_
         [ class ""
         ]
-        [ section
-            [ class "" ]
-            [ text "Lorem ipsum" ]
+        [ Character.view model
         , infoFooter
         ]
 

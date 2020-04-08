@@ -1,4 +1,4 @@
-module Attributes exposing (Attribute, getAbbreviation, getLabel, getProp)
+module Attributes exposing (Attribute, attributes, getAbbreviation, getLabel, getProp)
 
 
 type Attribute
@@ -10,6 +10,10 @@ type Attribute
     | Agility
     | Konstitution
     | Strength
+
+
+attributes =
+    [ Bravery, Intelligence, Intuition, Charisma, Dexterity, Agility, Konstitution, Strength ]
 
 
 getProp :

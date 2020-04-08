@@ -1,6 +1,9 @@
 module Character exposing (..)
 
-import Attributes exposing (Attribute)
+import Attributes exposing (Attribute, attributes)
+import Html exposing (..)
+import Html.Attributes as HtmlAttr
+import Html.Events exposing (..)
 
 
 type alias ChAttributes =
@@ -37,6 +40,37 @@ newCharacter =
     }
 
 
-check : Character -> Attribute -> Int -> Int
+check : Character -> Attributes.Attribute -> Int -> Int
 check character attribute diceRoll =
     max (diceRoll - Attributes.getProp attribute character.attributes) 0
+
+
+view : Character -> Html msg
+view chr =
+    article
+        [ HtmlAttr.class "" ]
+        [ h1 [] [ text chr.name ]
+        , viewAttributes chr.attributes
+        ]
+
+
+viewAttributes : ChAttributes -> Html msg
+viewAttributes chAttributes =
+    table []
+        [ thead []
+            [ tr []
+                [ th [] [ text "Eigenschaft" ]
+                , th [] [ text "Wert" ]
+                ]
+            ]
+        , tbody []
+            (List.map
+                (\attr ->
+                    tr []
+                        [ td [] [ attr |> Attributes.getLabel |> text ]
+                        , td [] [ chAttributes |> Attributes.getProp attr |> String.fromInt |> text ]
+                        ]
+                )
+                attributes
+            )
+        ]
