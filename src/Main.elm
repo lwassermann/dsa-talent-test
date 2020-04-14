@@ -56,6 +56,7 @@ init maybeModel =
 
 type Msg
     = NoOp
+    | ChrMsg Character.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -63,6 +64,9 @@ update msg model =
     case msg of
         NoOp ->
             ( model, Cmd.none )
+
+        ChrMsg chrMsg ->
+            Character.update chrMsg model
 
 
 
@@ -74,7 +78,7 @@ view model =
     main_
         [ class ""
         ]
-        [ Character.view model
+        [ Html.map ChrMsg (Character.view model)
         , infoFooter
         ]
 

@@ -45,7 +45,23 @@ check character attribute diceRoll =
     max (diceRoll - Attributes.getProp attribute character.attributes) 0
 
 
-view : Character -> Html msg
+type Msg
+    = UpdateAttribute Attributes.Attribute Int
+
+
+update : Msg -> Character -> ( Character, Cmd Msg )
+update msg character =
+    case msg of
+        UpdateAttribute attr value ->
+            ( { character | attributes = updateAttribute attr value character.attributes }, Cmd.none )
+
+
+updateAttribute : Attributes.Attribute -> Int -> ChAttributes -> ChAttributes
+updateAttribute attr value attributes =
+    { attributes | bravery = value }
+
+
+view : Character -> Html Msg
 view chr =
     article
         [ HtmlAttr.class "" ]
@@ -54,23 +70,37 @@ view chr =
         ]
 
 
-viewAttributes : ChAttributes -> Html msg
+viewAttributes : ChAttributes -> Html Msg
 viewAttributes chAttributes =
     table []
         [ thead []
             [ tr []
                 [ th [] [ text "Eigenschaft" ]
                 , th [] [ text "Wert" ]
+                , th [] [ span [ HtmlAttr.class "sr-only" ] [ text "Aktionen" ] ]
                 ]
             ]
         , tbody []
             (List.map
                 (\attr ->
+                    let
+                        value =
+                            chAttributes |> Attributes.getProp attr
+                    in
                     tr []
                         [ td [] [ attr |> Attributes.getLabel |> text ]
-                        , td [] [ chAttributes |> Attributes.getProp attr |> String.fromInt |> text ]
+                        , td [] [ value |> String.fromInt |> text ]
+                        , td []
+                            [ viewChangeAttrButton "+" attr (value + 1)
+                            , viewChangeAttrButton "-" attr (value - 1)
+                            ]
                         ]
                 )
                 attributes
             )
         ]
+
+
+viewChangeAttrButton : String -> Attributes.Attribute -> Int -> Html Msg
+viewChangeAttrButton label attr newValue =
+    button [ onClick (UpdateAttribute attr newValue) ] [ text label ]
